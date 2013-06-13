@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @post.titulo %></h2>
+<p><%= @post.conteudo %></p>
+ 
+<button class="btn btn-important"><%= link_to 'Editar Post', edit_post_path(@post) %></button>
+<button class="btn btn-important"><%= link_to 'Nova postagem', new_post_path %></button>
+<button class="btn btn-important"><%= link_to 'Voltar aos Posts', posts_path %></button>
+
+<h3>Comentarios</h3>
+<% @post.comentarios.each do |comentario| %>
+  <p>
+    <b>Autor:</b>
+    <%= comentario.autor %>
+  </p>
+ 
+  <p>
+    <b>Comentario:</b>
+    <%= comentario.conteudo %>
+  </p>
+<p>
+  <%= link_to 'Apagar Comentario', [comentario.post, comentario],
+               :confirm => 'Tem certeza?',
+               :method => :delete %>
+</p
+<hr />
+<% end %>
+ 
+<h3>Adicione um comentario:</h3>
+<%= form_for([@post, @post.comentarios.build]) do |f| %>
+  <div class="field">
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </div>
+  <div class="field">
+    <%= f.label :conteudo %><br />
+    <%= f.text_area :conteudo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
+<br />

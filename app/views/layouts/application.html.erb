@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>11 CHOUSHINSEI</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+
+<div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Postagens</a></li>
+          <li><a href="#">História</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <h3 class="muted">Supernovas</h3>
+      </div>
+
+      <hr>
+
+      <div class="jumbotron">
+        <h1>CHOUSHINSEI</h1>
+        <p class="lead"></p>
+      </div>
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>

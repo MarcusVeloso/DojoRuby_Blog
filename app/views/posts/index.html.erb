@@ -1,0 +1,10 @@
+<hr />
+
+<% @posts.each do |post| %>
+<h2><%= link_to post.titulo, post %></h2>
+<p><%= post.conteudo %></p>
+
+<hr />
+<% end%>
+
+<%= link_to 'Nova postagem', new_post_path %>
